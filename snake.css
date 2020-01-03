@@ -1,7 +1,14 @@
+body {
+    background-color:#C3CB5D;
+}
 h1 {
     font-family: "Amatic SC";
+    text-align: center;
 }
 
 canvas {
     border: 1px solid;
+    margin: auto;
+    display: flex;
+    background-color: #F5E7C3;
 }
