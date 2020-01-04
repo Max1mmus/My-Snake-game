@@ -1,7 +1,8 @@
 const canvas = document.getElementById("sCanvas");
 const ctx = canvas.getContext("2d");
-var h = 500;
-var w = 500;
+
+var h = 600;
+var w = 600;
 
 //starting points of snake
 var x = w/2;
@@ -17,9 +18,15 @@ canvas.height = h;
 
 var snakeArr = [];
 
+var apple = {
+    x : Math.floor(Math.random()*30)*20,
+    y : Math.floor(Math.random()*30)*20,
+}
+console.log(apple);
+
 function createSnake(){ 
     
-    for (var i = 0; i < 3; i++) {
+    for (var i = 0; i < 2; i++) {
         var snake = {
         x : x,
         y : y, 
@@ -27,10 +34,23 @@ function createSnake(){
         x = x + 20;   
     
         snakeArr.push(snake);
-    
     }
 }
-createSnake();
+
+function paintApple() {
+
+    ctx.fillStyle = "red";
+    ctx.fillRect(apple.x, apple.y, 20, 20);
+    ctx.strokeStyle = "black";
+    ctx.strokeRect(apple.x, apple.y, 20, 20);
+
+    if(apple.x == snakeArr[0].x && apple.y == snakeArr[0].y){
+        ctx.clearRect(0, 0, 20, 20);
+
+        apple.x = Math.floor(Math.random()*30)*20;
+        apple.y = Math.floor(Math.random()*30)*20;   
+    }
+}
 
 function paintSnake(){
 
@@ -41,26 +61,33 @@ function paintSnake(){
         ctx.strokeStyle = "black";
         ctx.strokeRect(snakeArr[i].x, snakeArr[i].y, 20, 20);
     }
-
-    let newHead = {
+    
+    let snakeHead = {
         x : snakeArr[0].x + dx,
         y : snakeArr[0].y + dy,
     }
-    
-    if(isPressed == true ){    
+     
+    if(isPressed == true ){     
         snakeArr.pop();
-        snakeArr.unshift(newHead);
-    }       
+        snakeArr.unshift(snakeHead);        
+    }
+
+    //if snake eats apple
+    if(snakeArr[0].x == apple.x && snakeArr[0].y == apple.y){
+        snakeArr.push(snakeHead); 
+    } 
 }
+
 
 function draw(){
     setTimeout(function() {
         requestAnimationFrame(draw)
-        ctx.clearRect(0, 0, w, h )
+        ctx.clearRect(0, 0, w, h);
         paintSnake();
-     
+        paintApple();
+        
         }, 1000/10)
-    } 
+} 
         
 draw();
 
@@ -90,4 +117,5 @@ document.onkeydown = function usingKey(event) {
         break;
     }
 }
-console.log(snakeArr)
+createSnake();
+console.log(snakeArr);
