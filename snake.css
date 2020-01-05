@@ -1,5 +1,5 @@
 body {
-    background-color:#C3CB5D;
+    background-color: #7A6C9E;
 }
 h1 {
     font-family: "Amatic SC";
@@ -10,5 +10,5 @@ canvas {
     border: 1px solid;
     margin: auto;
     display: flex;
-    background-color: #F5E7C3;
+    background-color: #9B89B0;
 }

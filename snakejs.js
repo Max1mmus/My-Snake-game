@@ -49,7 +49,7 @@ function paintSnake(){
 
     for(var i = 0; i < snakeArr.length; i++){
         
-        ctx.fillStyle = "#8CAA78";
+        ctx.fillStyle = "#E0F73A";
         ctx.fillRect(snakeArr[i].x, snakeArr[i].y, 20, 20);
         ctx.strokeStyle = "black";
         ctx.strokeRect(snakeArr[i].x, snakeArr[i].y, 20, 20);
@@ -109,9 +109,9 @@ document.onkeydown = function usingKey(event) {
     if(event.keyCode === 39 && !(dx === -20)){
         dx = 20;
         dy = 0;
-    }
-    
+    }   
 }
+
 draw();
 createSnake();
 console.log(snakeArr);
