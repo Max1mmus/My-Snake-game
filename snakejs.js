@@ -43,13 +43,6 @@ function paintApple() {
     ctx.fillRect(apple.x, apple.y, 20, 20);
     ctx.strokeStyle = "black";
     ctx.strokeRect(apple.x, apple.y, 20, 20);
-
-    if(apple.x == snakeArr[0].x && apple.y == snakeArr[0].y){
-        ctx.clearRect(0, 0, 20, 20);
-
-        apple.x = Math.floor(Math.random()*30)*20;
-        apple.y = Math.floor(Math.random()*30)*20;   
-    }
 }
 
 function paintSnake(){
@@ -74,7 +67,11 @@ function paintSnake(){
 
     //if snake eats apple
     if(snakeArr[0].x == apple.x && snakeArr[0].y == apple.y){
-        snakeArr.push(snakeHead); 
+        snakeArr.push(snakeHead);
+
+        ctx.clearRect(0, 0, 20, 20);
+        apple.x = Math.floor(Math.random()*30)*20;
+        apple.y = Math.floor(Math.random()*30)*20;
     } 
 }
 
@@ -98,7 +95,7 @@ document.onkeydown = function usingKey(event) {
 
         case 38: /*arrow up*/
         dx = 0;
-        dy = -20;  
+        dy = -20;
         break;
 
         case 40: /* arrow down*/
