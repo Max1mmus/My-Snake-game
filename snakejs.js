@@ -66,7 +66,7 @@ function paintSnake(){
     }
 
     //if snake eats apple
-    if(snakeArr[0].x == apple.x && snakeArr[0].y == apple.y){
+    if(snakeHead.x == apple.x && snakeHead.y == apple.y){
         snakeArr.push(snakeHead);
 
         ctx.clearRect(0, 0, 20, 20);
@@ -93,22 +93,22 @@ document.onkeydown = function usingKey(event) {
     isPressed = true;
     switch(event.keyCode) {
 
-        case 38: /*arrow up*/
+        case 38:  /*arrow up*/
         dx = 0;
         dy = -20;
         break;
 
-        case 40: /* arrow down*/
+        case 40:  /* arrow down*/
         dx = 0;
         dy = 20;
         break;
 
-        case  37: /*arrow left */
+        case 37:  /*arrow left*/
         dx = -20;
         dy = 0;
         break;
 
-        case 39: /*arrow right */
+        case 39:  /*arrow right*/
         dx = 20;
         dy = 0;
         break;
