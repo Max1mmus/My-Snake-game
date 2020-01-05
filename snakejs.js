@@ -86,33 +86,32 @@ function draw(){
         }, 1000/10)
 } 
         
-draw();
-
-document.onkeydown = function usingKey(event) {
-    //arrow keys 
+/* pressing arrow keys to control the snake */
+document.onkeydown = function usingKey(event) {   
     isPressed = true;
-    switch(event.keyCode) {
 
-        case 38:  /*arrow up*/
+    /* up key */
+    if(event.keyCode === 38 && !(dy === 20)){
         dx = 0;
         dy = -20;
-        break;
-
-        case 40:  /* arrow down*/
+    }
+    /* down key */
+    if(event.keyCode === 40 && !(dy === -20)){
         dx = 0;
-        dy = 20;
-        break;
-
-        case 37:  /*arrow left*/
-        dx = -20;
+        dy = 20; 
+    }
+    /* left key */
+    if(event.keyCode === 37 && !(dx === 20)){
+         dx = -20;
         dy = 0;
-        break;
-
-        case 39:  /*arrow right*/
+    }
+    /* right key */
+    if(event.keyCode === 39 && !(dx === -20)){
         dx = 20;
         dy = 0;
-        break;
     }
+    
 }
+draw();
 createSnake();
 console.log(snakeArr);
