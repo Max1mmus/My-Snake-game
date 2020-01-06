@@ -25,12 +25,11 @@ var apple = {
 }
 console.log(apple);
 
-var snake = {
+snakeArr[0] = {
     x : x,
     y : y,
-}
+};
 
-snakeArr.push(snake);
 
 function paintApple() {
 
@@ -63,7 +62,6 @@ function paintSnake(){
         snakeArr.push(snakeHead);
         score++;
 
-        ctx.clearRect(0, 0, 20, 20);
         apple.x = Math.floor(Math.random()*30)*20;
         apple.y = Math.floor(Math.random()*30)*20;
     } 
@@ -83,6 +81,7 @@ function draw(){
         paintSnake();
         paintApple();
         trackScore();
+
         }, 1000/10)
 } 
         
