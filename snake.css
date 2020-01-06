@@ -4,10 +4,13 @@ body {
 h1 {
     font-family: "Amatic SC";
     text-align: center;
+    font-size: 40px;
+    margin-bottom: 30px;
+    margin-top: 0px;
 }
 
 canvas {
-    border: 1px solid;
+    border: 2px solid;
     margin: auto;
     display: flex;
     background-color: #9B89B0;

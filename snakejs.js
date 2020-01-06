@@ -17,6 +17,7 @@ canvas.width = w;
 canvas.height = h;
 
 var snakeArr = [];
+var score = 0;
 
 var apple = {
     x : Math.floor(Math.random()*30)*20,
@@ -24,18 +25,12 @@ var apple = {
 }
 console.log(apple);
 
-function createSnake(){ 
-    
-    for (var i = 0; i < 2; i++) {
-        var snake = {
-        x : x,
-        y : y, 
-        }
-        x = x + 20;   
-    
-        snakeArr.push(snake);
-    }
+var snake = {
+    x : x,
+    y : y,
 }
+
+snakeArr.push(snake);
 
 function paintApple() {
 
@@ -60,21 +55,26 @@ function paintSnake(){
         y : snakeArr[0].y + dy,
     }
      
-    if(isPressed == true ){     
         snakeArr.pop();
         snakeArr.unshift(snakeHead);        
-    }
-
-    //if snake eats apple
+    
+    /* if snake eats apple */
     if(snakeHead.x == apple.x && snakeHead.y == apple.y){
         snakeArr.push(snakeHead);
+        score++;
 
         ctx.clearRect(0, 0, 20, 20);
         apple.x = Math.floor(Math.random()*30)*20;
         apple.y = Math.floor(Math.random()*30)*20;
     } 
+ 
 }
 
+function trackScore(){
+    ctx.font = "15px Arial";
+    ctx.fillStyle = "black";
+    ctx.fillText("Score: " + score, 5, 595);
+}
 
 function draw(){
     setTimeout(function() {
@@ -82,13 +82,13 @@ function draw(){
         ctx.clearRect(0, 0, w, h);
         paintSnake();
         paintApple();
-        
+        trackScore();
         }, 1000/10)
 } 
         
 /* pressing arrow keys to control the snake */
 document.onkeydown = function usingKey(event) {   
-    isPressed = true;
+    
 
     /* up key */
     if(event.keyCode === 38 && !(dy === 20)){
@@ -113,5 +113,4 @@ document.onkeydown = function usingKey(event) {
 }
 
 draw();
-createSnake();
 console.log(snakeArr);
