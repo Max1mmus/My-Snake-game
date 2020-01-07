@@ -90,10 +90,20 @@ function trackScore(){
 function gameOver(){
 
     var snakeH = snakeArr[0];
-    for(var i = 2; i < snakeArr.length; i++){
-        if(snakeH.x + dx === snakeArr[i].x && snakeH.y + dy === snakeArr[i].y)return true; 
+
+    for(var i = 2; i < snakeArr.length; i++) {
+
+        if(snakeH.x + dx === snakeArr[i].x && 
+           snakeH.y + dy === snakeArr[i].y)
+        {return true; }
     }
-        if(snakeH.x + dx > w || snakeH.x + dx < 0 && snakeH.y + dy > h || snakeH.y + dy < 0)return true;
+
+    if(snakeH.x + dx > w - 20 ||
+       snakeH.x + dx < 0      || 
+       snakeH.y + dy > h - 20 || 
+       snakeH.y + dy < 0) 
+    {return true; }
+        
 }
 
 /*function resetGame (){
@@ -114,7 +124,7 @@ function draw(){
         trackScore();
         gameOver();
         }, 1000/10)
-        
+
         if(gameOver()){   
         clearTimeout(drawOn);         
     }  
