@@ -99,8 +99,8 @@ function gameOver(){
     }
 
     if(snakeH.x > w - dx ||
-       snakeH.x < 0 || 
-       snakeH.y > h - dy|| 
+       snakeH.x < 0      || 
+       snakeH.y > h - dy || 
        snakeH.y < 0) 
     {return true; }
         
