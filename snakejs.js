@@ -98,10 +98,10 @@ function gameOver(){
         {return true; }
     }
 
-    if(snakeH.x + dx > w - 20 ||
-       snakeH.x + dx < 0      || 
-       snakeH.y + dy > h - 20 || 
-       snakeH.y + dy < 0) 
+    if(snakeH.x > w - dx ||
+       snakeH.x < 0 || 
+       snakeH.y > h - dy|| 
+       snakeH.y < 0) 
     {return true; }
         
 }
