@@ -1,4 +1,4 @@
 # My-Snake-game
 My first snake game
 
--------- IN PROGRESS --------
+Finished, just missing new game.
