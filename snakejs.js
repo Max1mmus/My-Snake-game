@@ -106,12 +106,6 @@ function gameOver(){
         
 }
 
-/*function resetGame (){
-    var conf = confirm("You died \nNew game?")
-    if(conf === true){
-    var getEl = document.getElementById("snakeG")
-    }
-}*/ 
 
 function draw(){
 
