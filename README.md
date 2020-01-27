@@ -1,4 +1,12 @@
 # My-Snake-game
-My first snake game
+My first snake game.
 
-Finished, just missing new game.
+## Made with:
+ 
+ * Pure JavaScript
+ * CSS
+ * HTML
+
+Finished.
+
+To add in future : new game;
