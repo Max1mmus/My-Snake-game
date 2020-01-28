@@ -1,5 +1,5 @@
 # My-Snake-game
-My first snake game.
+My first snake game built from scratch.
 
 ### After you clone repo :
 
