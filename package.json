@@ -3,20 +3,17 @@
   "version": "1.0.0",
   "description": "My first snake game",
   "main": "index.js",
-  "devDependencies": {
-    "concurrently": "^5.1.0",
-    "http-server": "^0.12.1",
-    "jshint": "^2.11.0",
-    "lodash": "^4.17.15"
+  "dependencies": {
+    "http-server": "^0.12.3"
   },
   "scripts": {
-    "open": "concurrently \"http-server -a localhost -p 1234\""
+    "open": "http-server -a localhost -c-1 -p 8080"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Max1mmus/My-Snake-game.git"
   },
-  "author": "",
+  "author": "Max1mmus",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Max1mmus/My-Snake-game/issues"
